@@ -62,7 +62,10 @@ const Header = () => {
       dispatch(userNotExists());
       toast.success(data.message);
     } catch (error) {
-      toast.error(error?.response?.data?.message || "Something went wrong");
+      toast.error(
+        error?.response?.data?.message ||
+          "Something went wrong from header logoutHandler",
+      );
     }
   };
   const openNotification = () => {

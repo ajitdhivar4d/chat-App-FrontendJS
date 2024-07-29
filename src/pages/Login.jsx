@@ -57,9 +57,13 @@ const Login = () => {
       dispatch(userExists(data.user));
       toast.success(data.message, { id: toastId });
     } catch (error) {
-      toast.error(error?.response?.data?.message || "Something went wrong", {
-        id: toastId,
-      });
+      toast.error(
+        error?.response?.data?.message ||
+          "Something went wrong from login handleLogin",
+        {
+          id: toastId,
+        },
+      );
     } finally {
       setIsLoading(false);
     }
@@ -95,9 +99,13 @@ const Login = () => {
       dispatch(userExists(data.user));
       toast.success(data.message, { id: toastId });
     } catch (error) {
-      toast.error(error?.response?.data?.message || "Something went wrong", {
-        id: toastId,
-      });
+      toast.error(
+        error?.response?.data?.message ||
+          "Something went wrong from login handleSignUp",
+        {
+          id: toastId,
+        },
+      );
     } finally {
       setIsLoading(false);
     }
