@@ -79,7 +79,9 @@ const ChatManagement = () => {
   useErrors([
     {
       isError: error,
-      error: error,
+      error:
+        error ||
+        "useErrors from ChatManagement useFetchData ${server}/api/v1/admin/chats dashboard-chats",
     },
   ]);
 

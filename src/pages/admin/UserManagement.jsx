@@ -59,7 +59,9 @@ const UserManagement = () => {
   useErrors([
     {
       isError: error,
-      error: error,
+      error:
+        error ||
+        "useErrors from UserManagement useFetchData /api/v1/admin/users dashboard-users",
     },
   ]);
 

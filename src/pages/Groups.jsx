@@ -82,11 +82,11 @@ const Groups = () => {
   const errors = [
     {
       isError: myGroups.isError,
-      error: myGroups.error,
+      error: myGroups.error || "useError from Groups useMyGroupsQuery",
     },
     {
       isError: groupDetails.isError,
-      error: groupDetails.error,
+      error: groupDetails.error || "useError from Groups useChatDetailsQuery",
     },
   ];
 

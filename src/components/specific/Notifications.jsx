@@ -31,13 +31,18 @@ const Notifications = () => {
     await acceptRequest("Accepting...", { requestId: _id, accept });
   };
 
-  useErrors([{ error, isError }]);
+  useErrors([
+    {
+      isError,
+      error: error || "UseErrors from Notifications useGetNotificationsQuery",
+    },
+  ]);
 
   const closeHandler = () => dispatch(setIsNotification(false));
 
   return (
     <Dialog open={isNotification} onClose={closeHandler}>
-      <Stack p={{ xs: "1rem", sm: "2rem" }} maxWidth={"25rem"}>
+      <Stack sx={{ xs: "1rem", sm: "2rem" }} maxWidth={"25rem"}>
         <DialogTitle>Notifications</DialogTitle>
 
         {isLoading ? (

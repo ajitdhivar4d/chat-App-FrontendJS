@@ -46,7 +46,9 @@ const AppLayout = () => (WrappedComponent) => {
 
     const { isLoading, data, isError, error, refetch } = useMyChatsQuery();
 
-    useErrors([{ isError, error }]);
+    useErrors([
+      { isError, error: error || " UseErrors from AppLayout useMyChatsQuery" },
+    ]);
 
     useEffect(() => {
       getOrSaveFromStorage({

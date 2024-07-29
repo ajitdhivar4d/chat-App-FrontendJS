@@ -68,7 +68,9 @@ const Dashboard = () => {
   useErrors([
     {
       isError: error,
-      error: error,
+      error:
+        error ||
+        "useErrors from Dashboard useFetchData /api/v1/admin/stats dashboard-stats",
     },
   ]);
 

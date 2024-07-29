@@ -58,8 +58,14 @@ const Chat = ({ chatId, user }) => {
   );
 
   const errors = [
-    { isError: chatDetails.isError, error: chatDetails.error },
-    { isError: oldMessagesChunk.isError, error: oldMessagesChunk.error },
+    {
+      isError: chatDetails.isError,
+      error: chatDetails.error || "useError from chat useChatDetailsQuery",
+    },
+    {
+      isError: oldMessagesChunk.isError,
+      error: oldMessagesChunk.error || "useError from chat useGetMessagesQuery",
+    },
   ];
 
   const members = chatDetails?.data?.chat?.members;

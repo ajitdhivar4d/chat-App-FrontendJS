@@ -9,16 +9,15 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import { sampleUser } from "../../constants/SampleData";
-import UserItem from "../shared/UserItem";
+import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
+import { useAsyncMutation, useErrors } from "../../hooks/hook";
 import {
   useAvailableFriendsQuery,
   useNewGroupMutation,
 } from "../../redux/api/api";
-import { useAsyncMutation, useErrors } from "../../hooks/hook";
 import { setIsNewGroup } from "../../redux/reducers/misc";
-import toast from "react-hot-toast";
+import UserItem from "../shared/UserItem";
 
 const NewGroup = () => {
   const { isNewGroup } = useSelector((state) => state.misc);
@@ -35,7 +34,7 @@ const NewGroup = () => {
   const errors = [
     {
       isError,
-      error,
+      error: error || "UseErrors from NewGroup useAvailableFriendsQuery",
     },
   ];
 

@@ -95,7 +95,9 @@ const MessageManagement = () => {
   useErrors([
     {
       isError: error,
-      error: error,
+      error:
+        error ||
+        "useErrors from MessageManagement useFetchData /api/v1/admin/messages dashboard-messages",
     },
   ]);
 

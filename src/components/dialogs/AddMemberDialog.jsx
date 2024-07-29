@@ -48,7 +48,13 @@ const AddMemberDialog = ({ chatId }) => {
     closeHandler();
   };
 
-  useErrors([{ isError, error }]);
+  useErrors([
+    {
+      isError,
+      error:
+        error || "UseErrors from AddMembersDialog useAvailableFriendsQuery",
+    },
+  ]);
 
   return (
     <Dialog open={isAddMember} onClose={closeHandler}>
